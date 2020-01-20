@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
-import { ApiService } from '../services/api.service';
 import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
-
+import { AcaoService } from '../services/acao.service';
+import { Acao } from '../models/acao';
+ 
 @Injectable({
   providedIn: 'root'
 })
-export class DataResolverService implements Resolve<any> {
+export class DataResolverService implements Resolve<Acao> {
 
-  constructor(private apiService: ApiService) { }
+  constructor(private acaoService: AcaoService) { }
 
   resolve(route: ActivatedRouteSnapshot) {
     let id = route.paramMap.get('id');
-    return this.apiService.getItem(id);
+    return this.acaoService.obter(+id);
   }
 }

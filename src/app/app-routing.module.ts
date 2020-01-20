@@ -1,3 +1,5 @@
+import { OrdemResolver } from './resolvers/ordem-resolver';
+import { AcaoUsuarioResolver } from './resolvers/acao-usuario-resolver';
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { DataResolverService } from './resolvers/data-resolver.service';
@@ -12,7 +14,9 @@ const routes: Routes = [
   {
     path: 'acoes/:id',
     resolve: {
-      acao: DataResolverService
+      acao: DataResolverService,
+      acaoUsuario: AcaoUsuarioResolver,
+      ordens: OrdemResolver
     },
     loadChildren: () => import('./pages/acao-detail/acao-detail.module').then( m => m.AcaoDetailPageModule)
   },

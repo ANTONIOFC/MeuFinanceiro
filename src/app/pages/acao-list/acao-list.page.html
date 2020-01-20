@@ -16,10 +16,10 @@
             <ion-card-content>
               <ion-row class="valor">
                 <ion-col size="6">
-                  {{ acao.cotacao.valor | currency }}  
+                  {{ acao.cotacao.valor | currency:"BRL" }}  
                 </ion-col>
                 <ion-col size="6">
-                  {{ acao.cotacao.variacao }}  
+                  {{ acao.cotacao.variacao | number }}  
                 </ion-col>
               </ion-row>
               <ion-row>
@@ -27,8 +27,8 @@
                 <ion-col size="6">Máx.</ion-col>
               </ion-row>
               <ion-row>
-                <ion-col size="6">{{ acao.cotacao.min | currency }}</ion-col>
-                <ion-col size="6">{{ acao.cotacao.max | currency }}</ion-col>
+                <ion-col size="6">{{ acao.cotacao.min | currency:"BRL" }}</ion-col>
+                <ion-col size="6">{{ acao.cotacao.max  | currency:"BRL" }}</ion-col>
               </ion-row>
             </ion-card-content>
           </ion-card>

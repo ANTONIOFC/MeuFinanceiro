@@ -29,6 +29,136 @@
                 "max": 1.89,
                 "variacao": -0.93
             }
+        },
+        {
+            "id": 4,
+            "nome": "Papel 4",
+            "cotacao": {
+                "valor": 6.24,
+                "min": 6.22,
+                "max": 6.66,
+                "variacao": 0.25
+            }
+        },
+        {
+            "id": 5,
+            "nome": "Papel 5",
+            "cotacao": {
+                "valor": 14.44,
+                "min": 14.58,
+                "max": 14.01,
+                "variacao": -0.25
+            }
+        },
+        {
+            "id": 6,
+            "nome": "Papel 6",
+            "cotacao": {
+                "valor": 1.33,
+                "min": 1.12,
+                "max": 1.99,
+                "variacao": -0.43
+            }
+        },
+        {
+            "id": 7,
+            "nome": "Papel 7",
+            "cotacao": {
+                "valor": 7.50,
+                "min": 7.12,
+                "max": 7.77,
+                "variacao": 0.73
+            }
+        },
+        {
+            "id": 8,
+            "nome": "Papel 8",
+            "cotacao": {
+                "valor": 8.82,
+                "min": 8.64,
+                "max": 9.07,
+                "variacao": 1.08
+            }
+        },
+        {
+            "id": 9,
+            "nome": "Papel 9",
+            "cotacao": {
+                "valor": 3.32,
+                "min": 3.02,
+                "max": 3.89,
+                "variacao": -0.77
+            }
+        },
+        {
+            "id": 10,
+            "nome": "Papel 10",
+            "cotacao": {
+                "valor": 15.50,
+                "min": 15.10,
+                "max": 15.71,
+                "variacao": 0.46
+            }
+        },
+        {
+            "id": 11,
+            "nome": "Papel 11",
+            "cotacao": {
+                "valor": 24.23,
+                "min": 24.04,
+                "max": 25.11,
+                "variacao": 0.52
+            }
+        },
+        {
+            "id": 12,
+            "nome": "Papel 12",
+            "cotacao": {
+                "valor": 1.89,
+                "min": 1.82,
+                "max": 2.12,
+                "variacao": 0.12
+            }
+        }
+    ],
+    "acoes-usuario": [
+        {
+            "id": 1,
+            "acaoId": 1,
+            "qtd": 10,
+            "total": 55
+        },
+        {
+            "id": 12,
+            "acaoId": 12,
+            "qtd": 5,
+            "total": 22.68
+        }
+    ],
+    "ordens" : [
+        {
+            "id": 1,
+            "acaoId": 1,
+            "qtd": 10,
+            "valor": 5.50,
+            "operacao": "compra",
+            "situacao": "fechada"
+        },
+        {
+            "id": 2,
+            "acaoId": 9,
+            "qtd": 3,
+            "valor": 3.34,
+            "operacao": "venda",
+            "situacao": "fechada"
+        },
+        {
+            "id": 1,
+            "acaoId": 12,
+            "qtd": 50,
+            "valor": 5.50,
+            "operacao": "compra",
+            "situacao": "aberta"
         }
     ]
 }

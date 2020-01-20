@@ -1,5 +1,5 @@
+import { AcaoService } from './../../services/acao.service';
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from 'src/app/services/api.service';
 import { Acao } from 'src/app/models/acao';
 import { take } from 'rxjs/operators';
 import { Router, NavigationExtras } from '@angular/router';
@@ -14,7 +14,7 @@ export class AcaoListPage implements OnInit {
   acoes: Acao[];
 
   constructor(
-    public apiService: ApiService,
+    public acaoService: AcaoService,
     private router: Router) {
     this.acoes = [];
    }
@@ -25,7 +25,7 @@ export class AcaoListPage implements OnInit {
 
   getAllAcoes() {
 
-    this.apiService.getList()
+    this.acaoService.listar()
       .pipe(take(1))  
       .subscribe(response => {
         console.log(response);
