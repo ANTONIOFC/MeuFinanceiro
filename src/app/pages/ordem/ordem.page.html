@@ -5,21 +5,31 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <h3>{{ operacao }}</h3>
-  <ion-list>
-    <ion-item>
-      <ion-input type="number" placeholder="Qunatidade"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input type="number" placeholder="Valor (R$)"></ion-input>
-    </ion-item>
-  </ion-list>
-</ion-content>
+  <form padding [formGroup]="formulario" (ngSubmit)="onSubmit()" novalidate>
+    <h3>{{ operacao }}</h3>
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Quantidade</ion-label>
+        <ion-input type="number" formControlName="qtd"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Valor(R$)</ion-label>
+        <ion-input type="number" formControlName="valor"></ion-input>
+      </ion-item>
+    </ion-list>
 
-<ion-footer>
-  <ion-toolbar>
-    <ion-button (click)="saveOrdem()" expand="block">
-      Efetuar {{ operacao }}
+  <ion-buttons slot="start">
+    <ion-button type="submit" fill="solid" size="small" color="primary">
+          <ion-icon name="save"></ion-icon>
+          <ion-ripple-effect type="bounded"></ion-ripple-effect>
+          Gravar
     </ion-button>
-  </ion-toolbar>
-</ion-footer>
+    <ion-button color="danger" fill="solid" size="small" (click)="limpar()">
+          <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+          <ion-icon slot="start" name="close"></ion-icon>
+          Limpar
+    </ion-button>
+</ion-buttons>
+</form>
+
+</ion-content>
