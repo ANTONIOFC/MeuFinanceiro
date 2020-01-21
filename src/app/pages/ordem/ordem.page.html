@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ordem</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h3>{{ operacao }}</h3>
+  <ion-list>
+    <ion-item>
+      <ion-input type="number" placeholder="Qunatidade"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="number" placeholder="Valor (R$)"></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button (click)="saveOrdem()" expand="block">
+      Efetuar {{ operacao }}
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

@@ -24,51 +24,90 @@
       <ion-card-title>{{ acao.nome }}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-    <ion-row>
-        <ion-col class="ion-float-left">
-          Cotação atual: {{ acao.cotacao.valor | currency:"BRL" }}
-        </ion-col>
-      </ion-row>
       <ion-row>
         <ion-col class="ion-float-left">
           <div>
-            Mínimo: {{ acao.cotacao.min | currency:"BRL" }}
+            Cotação atual:
           </div>
         </ion-col>
         <ion-col class="ion-float-right">
-          <div>
-            Máximo: {{ acao.cotacao.max | currency:"BRL" }}
+          <div class="valores">
+            {{ acao.cotacao.valor | currency:"BRL" }}
           </div>
         </ion-col>
       </ion-row>
       <ion-row>
-         <ion-col size="12" class="ion-float-left">
-            Qtd. ações: {{ acaoUsuario.qtd }}
+        <ion-col class="ion-float-left">
+          <div>
+            Valor mínimo:
+          </div>
         </ion-col>
-      </ion-row>
-    <ion-row>
-        <ion-col size="12" class="ion-float-left">
-          Valor total: {{ acaoUsuario.total | currency:"BRL" }}
+        <ion-col class="ion-float-right">
+          <div class="valores">
+            {{ acao.cotacao.min | currency:"BRL" }}
+          </div>
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col size="12" class="ion-float-left">
-          Ordens abertas: {{ ordens.length }}
+        <ion-col class="ion-float-left">
+          <div>
+            Valor máximo:
+          </div>
+        </ion-col>
+        <ion-col class="ion-float-right">
+          <div class="valores">
+            {{ acao.cotacao.max | currency:"BRL" }}
+          </div>
         </ion-col>
       </ion-row>
-
+      <ion-row>
+        <ion-col class="ion-float-left">
+          <div>
+            Qtd. de ações:
+          </div>
+        </ion-col>
+        <ion-col class="ion-float-right">
+          <div class="valores">
+            {{ acaoUsuario.qtd }}
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="ion-float-left">
+          <div>
+            Valor total:
+          </div>
+        </ion-col>
+        <ion-col class="ion-float-right">
+          <div class="valores">
+            {{ acaoUsuario.total | currency:"BRL" }}
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="ion-float-left">
+          <div>
+            Ordens abertas:
+          </div>
+        </ion-col>
+        <ion-col class="ion-float-right">
+          <div class="valores">
+            {{ ordens.length }}
+          </div>
+        </ion-col>
+      </ion-row>
     </ion-card-content>
 
     <ion-footer>
       <ion-row>
         <ion-col center text-center>
-          <button >
+          <button [routerLink]="['/ordem']" [queryParams]="{operacao: 'compra'}">
             <ion-icon name="add-circle"></ion-icon>
             <div>comprar</div>
           </button>
         </ion-col>
         <ion-col center text-center>
-          <button>
+          <button [routerLink]="['/ordem']" [queryParams]="{operacao: 'venda'}">
             <ion-icon name="remove-circle"></ion-icon>
             <div>vender</div>
           </button>
