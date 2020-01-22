@@ -21,7 +21,7 @@
     </ion-item>
 
     <ion-card-header>
-      <ion-card-title>{{ acao.nome }}</ion-card-title>
+      <ion-card-title>{{ acao.nome }} {{ acao.id }}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <ion-row>
@@ -101,13 +101,13 @@
     <ion-footer>
       <ion-row>
         <ion-col center text-center>
-          <button [routerLink]="['/ordem']" [queryParams]="{operacao: 'compra'}">
+          <button [routerLink]="['/ordem', acao.id, 'compra']" >
             <ion-icon name="add-circle"></ion-icon>
             <div>comprar</div>
           </button>
         </ion-col>
         <ion-col center text-center>
-          <button [routerLink]="['/ordem']" [queryParams]="{operacao: 'venda'}">
+          <button [routerLink]="['/ordem', acao.id, 'venda']" >
             <ion-icon name="remove-circle"></ion-icon>
             <div>vender</div>
           </button>

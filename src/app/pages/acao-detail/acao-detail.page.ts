@@ -39,4 +39,8 @@ export class AcaoDetailPage implements OnInit {
       console.log(this.ordens);
     }
   }
+
+/*   efetuarOperacao(operacao) {
+    this.router.navigate(['/ordem'], { queryParams: { 'acaoId: this.acao.id', 'operacao': operacao } }, { queryParamsHandling: 'preserve' })
+  } */
 }

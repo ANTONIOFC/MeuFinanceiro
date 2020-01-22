@@ -1,8 +1,9 @@
-import { OrdemResolver } from './resolvers/ordem-resolver';
-import { AcaoUsuarioResolver } from './resolvers/acao-usuario-resolver';
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AcaoResolver } from './resolvers/acao-resolver';
+import { AcaoUsuarioResolver } from './resolvers/acao-usuario-resolver';
+import { OrdemResolver } from './resolvers/ordem-resolver';
+import { OrdensResolver } from './resolvers/ordens-resolver';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -16,12 +17,19 @@ const routes: Routes = [
     resolve: {
       acao: AcaoResolver,
       acaoUsuario: AcaoUsuarioResolver,
-      ordens: OrdemResolver
+      ordens: OrdensResolver
     },
     loadChildren: () => import('./pages/acao-detail/acao-detail.module').then( m => m.AcaoDetailPageModule)
   },
   {
-    path: 'ordem',
+    path: 'ordem/:id',
+    loadChildren: () => import('./pages/ordem/ordem.module').then( m => m.OrdemPageModule)
+  },
+  {
+    path: 'ordem/:id/:operacao',
+    resolve: {
+      ordem: OrdemResolver
+    },
     loadChildren: () => import('./pages/ordem/ordem.module').then( m => m.OrdemPageModule)
   },
 

@@ -39,6 +39,15 @@ export class OrdemService {
       )
   }
 
+  incluir(ordem: Ordem): Observable<Ordem> {
+    return this.http
+      .post<Ordem>(this.base_path, JSON.stringify(ordem), this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
+  }
+
   handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       console.error('Ocorreu um erro:', error.error.message);
