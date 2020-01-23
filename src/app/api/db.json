@@ -243,6 +243,22 @@
       "valor": 3,
       "operacao": "compra",
       "situacao": "fechada"
+    },
+    {
+      "id": 7,
+      "acaoId": 1,
+      "qtd": 11,
+      "valor": 10,
+      "operacao": "compra",
+      "situacao": "fechada"
+    },
+    {
+      "id": 8,
+      "acaoId": 1,
+      "qtd": 5,
+      "valor": 10,
+      "operacao": "compra",
+      "situacao": "fechada"
     }
   ]
 }

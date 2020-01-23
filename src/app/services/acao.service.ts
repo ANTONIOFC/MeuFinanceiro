@@ -20,7 +20,7 @@ export class AcaoService {
     })
   }
 
-  constructor(private http: HttpClient) { }
+constructor(private http: HttpClient) { }
 
  listar(): Observable<Acao[]> {
 

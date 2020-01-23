@@ -1,15 +1,17 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Compra e Venda</ion-title>
+  <ion-toolbar color="medium">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Compra e Venda
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content color="dark">
   <ion-card>
-    <ion-item>
-      <!--       <ion-avatar slot="start">
-        <img src="../../assets/user.jpg">
-      </ion-avatar> -->
+    <ion-item color="medium">
       <ion-label>
         <div class="ion-text-end">
           <p>
@@ -21,7 +23,7 @@
     </ion-item>
 
     <ion-card-header>
-      <ion-card-title>{{ acao.nome }} {{ acao.id }}</ion-card-title>
+      <ion-card-title>{{ acao.nome }} </ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <ion-row>

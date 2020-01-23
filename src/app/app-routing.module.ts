@@ -28,7 +28,8 @@ const routes: Routes = [
   {
     path: 'ordem/:id/:operacao',
     resolve: {
-      ordem: OrdemResolver
+      ordem: OrdemResolver,
+      acaoUsuario: AcaoUsuarioResolver
     },
     loadChildren: () => import('./pages/ordem/ordem.module').then( m => m.OrdemPageModule)
   },

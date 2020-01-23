@@ -1,10 +1,15 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>ordem</ion-title>
+  <ion-toolbar color="medium">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Ordem de {{ operacao }}
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content color="dark" class="ion-padding">
   <form padding [formGroup]="formulario" (ngSubmit)="onSubmit()" novalidate>
     <h3>{{ operacao }}</h3>
     <ion-list>
@@ -19,7 +24,7 @@
     </ion-list>
 
   <ion-buttons slot="start">
-    <ion-button type="submit" fill="solid" size="small" color="primary">
+    <ion-button type="submit" fill="solid" size="small" color="medium">
           <ion-icon name="save"></ion-icon>
           <ion-ripple-effect type="bounded"></ion-ripple-effect>
           Gravar
