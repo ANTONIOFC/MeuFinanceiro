@@ -13,7 +13,7 @@
   <form padding [formGroup]="formulario" (ngSubmit)="onSubmit()" novalidate>
     <ion-list>
       <ion-list-header>
-        Ação: {{ acao.nome }}
+        <ion-title size="large">Ação: {{ acao.nome }}</ion-title>
       </ion-list-header>
       
       <ion-item [class.ion-invalid]="verificaValidTouched('qtd')">
