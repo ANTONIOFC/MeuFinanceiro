@@ -4,37 +4,39 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      Ordem de {{ operacao }}
+      Ordem de {{ ordem.operacao }}
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content color="dark" class="ion-padding">
   <form padding [formGroup]="formulario" (ngSubmit)="onSubmit()" novalidate>
-    <h3>{{ operacao }}</h3>
     <ion-list>
-      <ion-item>
+      <ion-list-header>
+        Operação de {{ ordem.operacao }}
+      </ion-list-header>
+      <ion-item [class.ion-invalid]="verificaValidTouched('qtd')">
         <ion-label position="floating">Quantidade</ion-label>
         <ion-input type="number" formControlName="qtd"></ion-input>
       </ion-item>
-      <ion-item>
+      <ion-item [class.ion-invalid]="verificaValidTouched('valor')">
         <ion-label position="floating">Valor(R$)</ion-label>
         <ion-input type="number" formControlName="valor"></ion-input>
       </ion-item>
+      <ion-item>
+        <ion-buttons slot="start">
+          <ion-button type="submit" fill="solid" size="small" color="dark">
+                <ion-icon name="save"></ion-icon>
+                <ion-ripple-effect type="bounded"></ion-ripple-effect>
+                Gravar
+          </ion-button>
+          <ion-button color="medium" fill="solid" size="small" (click)="limpar()">
+                <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+                <ion-icon slot="start" name="close"></ion-icon>
+                Limpar
+          </ion-button>
+      </ion-buttons>      
+      </ion-item>
     </ion-list>
-
-  <ion-buttons slot="start">
-    <ion-button type="submit" fill="solid" size="small" color="medium">
-          <ion-icon name="save"></ion-icon>
-          <ion-ripple-effect type="bounded"></ion-ripple-effect>
-          Gravar
-    </ion-button>
-    <ion-button color="danger" fill="solid" size="small" (click)="limpar()">
-          <ion-ripple-effect type="unbounded"></ion-ripple-effect>
-          <ion-icon slot="start" name="close"></ion-icon>
-          Limpar
-    </ion-button>
-</ion-buttons>
 </form>
-
 </ion-content>

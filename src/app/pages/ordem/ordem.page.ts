@@ -46,7 +46,7 @@ export class OrdemPage implements OnInit, OnDestroy {
     }
 
     this.formulario = this.formBuilder.group({
-      operacao: [this.ordem.operacao, Validators.required],
+      //operacao: [this.ordem.operacao, Validators.required],
       qtd: [this.ordem.qtd, Validators.compose([Validators.required, CustomValidation.quantidadeVendaValidator(this.acaoUsuario.qtd) ])],
       valor: [this.ordem.valor, Validators.required],
     })
@@ -81,6 +81,12 @@ export class OrdemPage implements OnInit, OnDestroy {
         controle.markAsDirty();
       });
     }
+  }
+
+  verificaValidTouched(campo: string) {
+
+    return !this.formulario.get(campo).valid &&
+      (this.formulario.get(campo).touched || this.formulario.get(campo).dirty);
   }
 
   async presentToast(mensagem: string) {

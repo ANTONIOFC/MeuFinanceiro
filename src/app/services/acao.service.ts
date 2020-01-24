@@ -52,7 +52,15 @@ constructor(private http: HttpClient) { }
       )
   }
 
+  listarAcoesUsuario(): Observable<AcaoUsuario[]> {
 
+    return this.http
+      .get<AcaoUsuario[]>(this.base_path + this.apiAcoesUsuario)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
+  }
     
     handleError(error: HttpErrorResponse) {
       if (error.error instanceof ErrorEvent) {

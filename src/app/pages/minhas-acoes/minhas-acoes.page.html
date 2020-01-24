@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="medium">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Minhas de Ações
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark" padding>
+  <ion-list>
+    <ion-list-header>
+      Minhas Ações
+    </ion-list-header>
+
+    <ion-item *ngFor="let acao of acoes">
+      
+      <ion-label>
+        <div>
+          <h2>{{ acao.nome }}</h2>
+          <p>Quantidade: {{ acao.qtd }}</p>
+          <p>Valor: {{ acao.total | currency:"BRL" }}</p>
+        </div>
+      </ion-label>
+      <ion-button slot="end" color="light" [routerLink]="['/ordem', acao.acaoId, 'venda']" >
+        <ion-icon name="trending-up" slot="end"></ion-icon>
+        Vender
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

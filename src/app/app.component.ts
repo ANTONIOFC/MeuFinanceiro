@@ -18,12 +18,16 @@ export class AppComponent {
       icon: 'home',
     },
     {
-      title: 'Ações',
+      title: 'Mercado',
       url: '/acoes',
       icon: 'clipboard'
     },
+    {
+      title: 'Minhas Ações',
+      url: '/minhas-acoes',
+      icon: 'clipboard'
+    },
   ]
-
 
   constructor(
     private platform: Platform,
