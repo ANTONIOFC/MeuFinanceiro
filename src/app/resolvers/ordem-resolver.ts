@@ -9,7 +9,8 @@ import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
 })
 export class OrdemResolver implements Resolve<Ordem> {
 
-    constructor(private ordemService: OrdemService){}
+    constructor(
+        private ordemService: OrdemService){}
 
     resolve(route: ActivatedRouteSnapshot) : Observable<Ordem> {
 
@@ -19,7 +20,7 @@ export class OrdemResolver implements Resolve<Ordem> {
 
             if (route.params['operacao']) {
                 let operacao = route.paramMap.get('operacao');
-
+            
                 return of ({
                     id: null,
                     acaoId: +id,

@@ -12,16 +12,21 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { registerLocaleData } from '@angular/common';
 import ptBr from '@angular/common/locales/pt';
+import { ErrorMsgComponent } from './validators/error-msg/error-msg.component';
+import { ValidatorsModule } from './validators/validators.module';
 registerLocaleData(ptBr)
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent, 
+  ],
   entryComponents: [],
   imports: [
     BrowserModule, 
     IonicModule.forRoot(),
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ValidatorsModule,
   ],
   providers: [
     StatusBar,

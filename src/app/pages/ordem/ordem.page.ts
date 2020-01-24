@@ -8,6 +8,7 @@ import { Ordem } from 'src/app/models/ordem';
 import { ToastController } from '@ionic/angular';
 import { AcaoUsuario } from 'src/app/models/acoes-usuario';
 import { CustomValidation } from 'src/app/validators/custom-validation';
+import { Acao } from 'src/app/models/acao';
 
 @Component({
   selector: 'app-ordem',
@@ -18,6 +19,7 @@ export class OrdemPage implements OnInit, OnDestroy {
 
   toast;
   formulario: FormGroup;
+  acao: Acao;
   ordem: Ordem;
   acaoUsuario: AcaoUsuario;
 
@@ -40,6 +42,7 @@ export class OrdemPage implements OnInit, OnDestroy {
       }); */
 
     this.ordem = this.route.snapshot.data['ordem'];
+    this.acao = this.route.snapshot.data['acao'];
 
     if (this.route.snapshot.data['acaoUsuario']) {
       this.acaoUsuario = this.route.snapshot.data['acaoUsuario'];

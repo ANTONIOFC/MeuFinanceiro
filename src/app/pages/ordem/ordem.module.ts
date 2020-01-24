@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { OrdemPageRoutingModule } from './ordem-routing.module';
 
 import { OrdemPage } from './ordem.page';
+import { ValidatorsModule } from 'src/app/validators/validators.module';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { OrdemPage } from './ordem.page';
     FormsModule,
     ReactiveFormsModule,
     IonicModule,
+    ValidatorsModule,
     OrdemPageRoutingModule
   ],
   declarations: [OrdemPage]

@@ -218,7 +218,7 @@
     },
     {
       "id": 2,
-      "acaoId": 9,
+      "acaoId": 2,
       "qtd": 3,
       "valor": 3.34,
       "operacao": "venda",
@@ -226,7 +226,7 @@
     },
     {
       "id": 3,
-      "acaoId": 8,
+      "acaoId": 3,
       "qtd": null,
       "valor": null,
       "operacao": "compra",
@@ -234,7 +234,7 @@
     },
     {
       "id": 4,
-      "acaoId": 8,
+      "acaoId": 4,
       "qtd": null,
       "valor": null,
       "operacao": "compra",
@@ -242,7 +242,7 @@
     },
     {
       "id": 5,
-      "acaoId": 7,
+      "acaoId": 5,
       "qtd": null,
       "valor": null,
       "operacao": "compra",
@@ -250,7 +250,7 @@
     },
     {
       "id": 6,
-      "acaoId": 9,
+      "acaoId": 6,
       "qtd": 10,
       "valor": 3,
       "operacao": "compra",
@@ -258,7 +258,7 @@
     },
     {
       "id": 7,
-      "acaoId": 1,
+      "acaoId": 7,
       "qtd": 11,
       "valor": 10,
       "operacao": "compra",
@@ -266,7 +266,7 @@
     },
     {
       "id": 8,
-      "acaoId": 1,
+      "acaoId": 8,
       "qtd": 5,
       "valor": 10,
       "operacao": "compra",

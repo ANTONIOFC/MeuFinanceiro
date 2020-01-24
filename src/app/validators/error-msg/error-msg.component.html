@@ -1,3 +1,5 @@
-<p>
-  error-msg works!
-</p>
+<ion-item *ngIf="errorMessage != null">
+  <ion-text color="danger" class="form-error">
+    {{ errorMessage }}
+  </ion-text>
+</ion-item>

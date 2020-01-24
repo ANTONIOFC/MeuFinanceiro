@@ -13,16 +13,23 @@
   <form padding [formGroup]="formulario" (ngSubmit)="onSubmit()" novalidate>
     <ion-list>
       <ion-list-header>
-        Operação de {{ ordem.operacao }}
+        Ação: {{ acao.nome }}
       </ion-list-header>
+      
       <ion-item [class.ion-invalid]="verificaValidTouched('qtd')">
         <ion-label position="floating">Quantidade</ion-label>
         <ion-input type="number" formControlName="qtd"></ion-input>
       </ion-item>
+
+      <app-error-msg [control]="formulario.get('qtd')" label="Quantidade"></app-error-msg>
+
       <ion-item [class.ion-invalid]="verificaValidTouched('valor')">
         <ion-label position="floating">Valor(R$)</ion-label>
         <ion-input type="number" formControlName="valor"></ion-input>
       </ion-item>
+      
+      <app-error-msg [control]="formulario.get('valor')" label="Valor"></app-error-msg>
+
       <ion-item>
         <ion-buttons slot="start">
           <ion-button type="submit" fill="solid" size="small" color="dark">

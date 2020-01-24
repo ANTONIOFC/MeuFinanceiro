@@ -29,6 +29,7 @@ const routes: Routes = [
   {
     path: 'ordem/:id/:operacao',
     resolve: {
+      acao: AcaoResolver,
       ordem: OrdemResolver,
       acaoUsuario: AcaoUsuarioResolver
     },
