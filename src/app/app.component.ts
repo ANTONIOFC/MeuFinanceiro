@@ -27,6 +27,11 @@ export class AppComponent {
       url: '/minhas-acoes',
       icon: 'clipboard'
     },
+    {
+      title: 'Minhas Ordens',
+      url: '/minhas-ordens',
+      icon: 'clipboard'
+    },
   ]
 
   constructor(

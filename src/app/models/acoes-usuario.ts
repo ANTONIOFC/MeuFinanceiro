@@ -1,6 +1,8 @@
+import { Acao } from './acao';
+
 export class AcaoUsuario {
+    id: number;
     acaoId: number;
-    nome: string;
     qtd: number;
-    total: number
+    acao: Acao;
 }

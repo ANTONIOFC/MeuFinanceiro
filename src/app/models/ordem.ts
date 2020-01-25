@@ -1,3 +1,5 @@
+import { Acao } from './acao';
+
 export class Ordem {
     id: number;
     acaoId: number;
@@ -5,4 +7,5 @@ export class Ordem {
     valor: number;
     operacao: string;
     situacao: string;
+    acao: Acao;
 }

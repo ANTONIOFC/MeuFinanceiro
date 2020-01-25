@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { map } from 'rxjs/operators';
+import { map, take } from 'rxjs/operators';
 import { Observable, Subscription } from 'rxjs';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { OrdemService } from 'src/app/services/ordem.service';
@@ -9,6 +9,7 @@ import { ToastController } from '@ionic/angular';
 import { AcaoUsuario } from 'src/app/models/acoes-usuario';
 import { CustomValidation } from 'src/app/validators/custom-validation';
 import { Acao } from 'src/app/models/acao';
+import { AcaoService } from 'src/app/services/acao.service';
 
 @Component({
   selector: 'app-ordem',
@@ -31,15 +32,10 @@ export class OrdemPage implements OnInit, OnDestroy {
     private router: Router,
     private formBuilder: FormBuilder,
     private ordemService: OrdemService,
+    private acaoService: AcaoService,
     private toastCtrl: ToastController) { }
 
   ngOnInit() {
-
-/*     this.sub = 
-      this.route.queryParams
-      .subscribe(params => {
-        this.operacao = params['operacao'] || ''
-      }); */
 
     this.ordem = this.route.snapshot.data['ordem'];
     this.acao = this.route.snapshot.data['acao'];
@@ -50,7 +46,7 @@ export class OrdemPage implements OnInit, OnDestroy {
 
     this.formulario = this.formBuilder.group({
       //operacao: [this.ordem.operacao, Validators.required],
-      qtd: [this.ordem.qtd, Validators.compose([Validators.required, CustomValidation.quantidadeVendaValidator(this.acaoUsuario.qtd) ])],
+      qtd: [this.ordem.qtd, Validators.compose([Validators.required, CustomValidation.quantidadeVendaValidator(this.acaoUsuario.qtd, this.ordem.operacao) ])],
       valor: [this.ordem.valor, Validators.required],
     })
   }
@@ -74,9 +70,23 @@ export class OrdemPage implements OnInit, OnDestroy {
       this.ordem.situacao = 'fechada';
 
       this.ordemService.incluir(this.ordem)
+        .pipe(take(1))
         .subscribe(ret => {
-          this.presentToast(`${this.ordem.operacao} efetuada com sucesso`);
-          this.router.navigateByUrl('acoes');
+          
+          let qtd;
+
+          if (this.ordem.operacao == 'venda'){
+            qtd = this.acaoUsuario.qtd - this.ordem.qtd;
+          } else {
+            qtd = this.acaoUsuario.qtd + this.ordem.qtd;
+          }
+
+          this.acaoService.atualizarQtdAcaoUsuario(this.acaoUsuario.id,qtd)
+          .pipe(take(1))
+          .subscribe(retorno => {
+            this.presentToast(`${this.ordem.operacao} efetuada com sucesso`);
+            this.router.navigateByUrl('minhas-ordens');
+          })
         });
     } else {
       Object.keys(this.formulario.controls).forEach(campo => {
@@ -98,7 +108,7 @@ export class OrdemPage implements OnInit, OnDestroy {
       showCloseButton: true,
       position: 'bottom',
       closeButtonText: 'fechar',
-      color: 'danger'
+      color: 'primary'
     });
     
     this.toast.present();

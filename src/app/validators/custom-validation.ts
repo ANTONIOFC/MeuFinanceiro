@@ -2,13 +2,15 @@ import { AbstractControl, ValidatorFn, NgControl } from '@angular/forms';
 
 export class CustomValidation {
 
-    static quantidadeVendaValidator(qtdAtual: number) : ValidatorFn {
+    static quantidadeVendaValidator(qtdAtual: number, operacao: string) : ValidatorFn {
 
         return (control: AbstractControl): { [key: string]: any } | null => {
 
             if(control.value !== null) {
-                if (control.value == 0 || control.value > qtdAtual)
+                if (operacao == 'venda') {
+                    if (control.value == 0 || control.value > qtdAtual)
                     return { invalidQtd: true };
+                }
             }
             return null;
         }

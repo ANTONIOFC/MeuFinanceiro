@@ -42,6 +42,14 @@ const routes: Routes = [
     },
     loadChildren: () => import('./pages/minhas-acoes/minhas-acoes.module').then( m => m.MinhasAcoesPageModule)
   },
+  {
+    path: 'minhas-ordens',
+    resolve: {
+      ordens: OrdensResolver
+    },
+    loadChildren: () => import('./pages/minhas-ordens/minhas-ordens.module').then( m => m.MinhasOrdensPageModule)
+  },
+
 
 
 ];

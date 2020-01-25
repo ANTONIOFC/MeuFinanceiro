@@ -27,7 +27,8 @@ export class OrdemResolver implements Resolve<Ordem> {
                     qtd: null,
                     valor: null,
                     operacao: operacao,
-                    situacao: 'aberta'
+                    situacao: 'aberta',
+                    acao: null
                 })    
             }
             else {

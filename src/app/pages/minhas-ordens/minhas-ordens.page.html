@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="medium">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Meus Investimentos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark" padding>
+  <ion-list>
+    <ion-list-header>
+      <ion-title size="large">Minhas Ordens</ion-title>
+    </ion-list-header>
+
+    <ion-item *ngFor="let ordem of ordens">
+      <ion-label>
+        <div>
+          
+            <ion-row>
+                          
+            <ion-col size="6">
+              <h2>Ordem no.: {{ ordem.id }}</h2>
+            </ion-col>
+            <ion-col size="6">
+              <h3 class="ion-text-end">
+                {{ ordem.operacao }}
+              </h3>
+            </ion-col>
+          </ion-row>
+
+          <h4>Ação: {{ ordem.acao.nome }}</h4>
+          <p>Quantidade: {{ ordem.qtd }}</p>
+          <p>Valor unitário: {{ ordem.valor | currency:"BRL" }}</p>
+        </div>
+      </ion-label>
+<!--       <ion-button slot="end" color="light" fill="clear" size="small" [routerLink]="['/ordem', acao.acaoId, 'venda']" >
+        <ion-icon name="trending-up" slot="end"></ion-icon>
+        Vender
+      </ion-button>
+ -->    </ion-item>
+  </ion-list>
+</ion-content>

@@ -3,7 +3,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { throwError, Observable } from 'rxjs';
 import { Acao } from '../models/acao';
 import { catchError, retry } from 'rxjs/operators';
-import { AcaoUsuario } from '../models/acoes-usuario';
+import { AcaoUsuario } from 'src/app/models/acoes-usuario';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +11,8 @@ import { AcaoUsuario } from '../models/acoes-usuario';
 export class AcaoService {
 
   base_path = 'http://localhost:3000/';
-  apiAcoes = "acoes";
-  apiAcoesUsuario = "acoes-usuario";
+  apiAcoes = "acaos";
+  apiAcoesUsuario = "acoes-usuarios";
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -55,13 +55,24 @@ constructor(private http: HttpClient) { }
   listarAcoesUsuario(): Observable<AcaoUsuario[]> {
 
     return this.http
-      .get<AcaoUsuario[]>(this.base_path + this.apiAcoesUsuario)
+      .get<AcaoUsuario[]>(this.base_path + this.apiAcoesUsuario + '?_expand=acao')
       .pipe(
         retry(2),
         catchError(this.handleError)
       )
   }
     
+  atualizarQtdAcaoUsuario(id, qtd) : Observable<AcaoUsuario>{
+
+    const data = { "qtd": qtd};
+    return this.http
+      .patch<AcaoUsuario>(this.base_path + this.apiAcoesUsuario + '/' + id, JSON.stringify(data), this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
+  }
+
     handleError(error: HttpErrorResponse) {
       if (error.error instanceof ErrorEvent) {
         console.error('Ocorreu um erro:', error.error.message);

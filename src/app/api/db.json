@@ -1,5 +1,5 @@
 {
-  "acoes": [
+  "acaos": [
     {
       "id": 1,
       "nome": "Papel 1",
@@ -121,90 +121,66 @@
       }
     }
   ],
-  "acoes-usuario": [
+  "acoes-usuarios": [
     {
       "id": 1,
       "acaoId": 1,
-      "nome": "Papel 1",
-      "qtd": 10,
-      "total": 55
+      "qtd": 8
     },
     {
       "id": 2,
       "acaoId": 2,
-      "nome": "Papel 2",
-      "qtd": 4,
-      "total": 48.92
+      "qtd": 3
     },
     {
       "id": 3,
       "acaoId": 3,
-      "nome": "Papel 3",
-      "qtd": 20,
-      "total": 24.4
+      "qtd": 17
     },
     {
       "id": 4,
       "acaoId": 4,
-      "nome": "Papel 4",
-      "qtd": 8,
-      "total": 49.92
+      "qtd": 8
     },
     {
       "id": 5,
       "acaoId": 5,
-      "nome": "Papel 5",
-      "qtd": 30,
-      "total": 433.2
+      "qtd": 30
     },
     {
       "id": 6,
       "acaoId": 6,
-      "nome": "Papel 6",
-      "qtd": 12,
-      "total": 15.96
+      "qtd": 12
     },
     {
       "id": 7,
       "acaoId": 7,
-      "nome": "Papel 7",
-      "qtd": 40,
-      "total": 300
+      "qtd": 7
     },
     {
       "id": 8,
       "acaoId": 8,
-      "nome": "Papel 8",
-      "qtd": 16,
-      "total": 141.12
+      "qtd": 16
     },
     {
       "id": 9,
       "acaoId": 9,
-      "nome": "Papel 9",
-      "qtd": 50,
-      "total": 160
+      "qtd": 50
     },
     {
       "id": 10,
       "acaoId": 10,
-      "nome": "Papel 10",
-      "qtd": 20,
-      "total": 310
+      "qtd": 20
     },
     {
       "id": 11,
       "acaoId": 11,
-      "nome": "Papel 11",
-      "qtd": 60,
-      "total": 1453.8
+      "qtd": 60
     },
     {
       "id": 12,
       "acaoId": 12,
-      "nome": "Papel 12",
-      "qtd": 24,
-      "total": 45.36
+      "qtd": 12
     }
   ],
   "ordens": [
@@ -226,27 +202,27 @@
     },
     {
       "id": 3,
-      "acaoId": 3,
-      "qtd": null,
-      "valor": null,
+      "acaoId": 2,
+      "qtd": 10,
+      "valor": 3.5,
       "operacao": "compra",
-      "situacao": "aberta"
+      "situacao": "fechada"
     },
     {
       "id": 4,
       "acaoId": 4,
-      "qtd": null,
-      "valor": null,
+      "qtd": 3,
+      "valor": 5.8,
       "operacao": "compra",
-      "situacao": "aberta"
+      "situacao": "fechada"
     },
     {
       "id": 5,
       "acaoId": 5,
-      "qtd": null,
-      "valor": null,
+      "qtd": 15,
+      "valor": 16.98,
       "operacao": "compra",
-      "situacao": "aberta"
+      "situacao": "fechada"
     },
     {
       "id": 6,
@@ -271,6 +247,87 @@
       "valor": 10,
       "operacao": "compra",
       "situacao": "fechada"
+    },
+    {
+      "id": 9,
+      "acaoId": 1,
+      "qtd": 120,
+      "valor": 5,
+      "operacao": "compra",
+      "situacao": "fechada",
+      "acao": null
+    },
+    {
+      "id": 10,
+      "acaoId": 1,
+      "qtd": 15,
+      "valor": 4,
+      "operacao": "venda",
+      "situacao": "fechada",
+      "acao": null
+    },
+    {
+      "id": 11,
+      "acaoId": 12,
+      "qtd": 4,
+      "valor": 12,
+      "operacao": "venda",
+      "situacao": "fechada",
+      "acao": null
+    },
+    {
+      "id": 12,
+      "acaoId": 7,
+      "qtd": 2,
+      "valor": 2,
+      "operacao": "venda",
+      "situacao": "fechada",
+      "acao": null
+    },
+    {
+      "id": 13,
+      "acaoId": 3,
+      "qtd": 3,
+      "valor": 5,
+      "operacao": "venda",
+      "situacao": "fechada",
+      "acao": null
+    },
+    {
+      "id": 14,
+      "acaoId": 2,
+      "qtd": 1,
+      "valor": 12,
+      "operacao": "venda",
+      "situacao": "fechada",
+      "acao": null
+    },
+    {
+      "id": 15,
+      "acaoId": 1,
+      "qtd": 8,
+      "valor": 3,
+      "operacao": "compra",
+      "situacao": "fechada",
+      "acao": null
+    },
+    {
+      "id": 16,
+      "acaoId": 1,
+      "qtd": 3,
+      "valor": 2,
+      "operacao": "venda",
+      "situacao": "fechada",
+      "acao": null
+    },
+    {
+      "id": 17,
+      "acaoId": 1,
+      "qtd": 2,
+      "valor": 2,
+      "operacao": "venda",
+      "situacao": "fechada",
+      "acao": null
     }
   ]
 }

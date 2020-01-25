@@ -22,7 +22,7 @@ export class OrdemService {
   listar(): Observable<Ordem[]> {
 
     return this.http
-      .get<Ordem[]>(this.base_path)
+      .get<Ordem[]>(this.base_path + '?_expand=acao')
       .pipe(
         retry(2),
         catchError(this.handleError)
