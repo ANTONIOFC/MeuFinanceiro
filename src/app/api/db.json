@@ -125,7 +125,7 @@
     {
       "id": 1,
       "acaoId": 1,
-      "qtd": 8
+      "qtd": 7
     },
     {
       "id": 2,
@@ -325,6 +325,15 @@
       "acaoId": 1,
       "qtd": 2,
       "valor": 2,
+      "operacao": "venda",
+      "situacao": "fechada",
+      "acao": null
+    },
+    {
+      "id": 18,
+      "acaoId": 1,
+      "qtd": 1,
+      "valor": 3,
       "operacao": "venda",
       "situacao": "fechada",
       "acao": null
